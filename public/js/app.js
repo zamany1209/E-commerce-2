@@ -1852,15 +1852,339 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
+      src: "product/",
       categoris: [],
       products: []
     };
   },
   mounted: function mounted() {
-    this.loadCategoris(); // this.loadProducts();
+    this.loadCategoris();
+    this.loadProducts();
   },
   methods: {
     loadCategoris: function loadCategoris() {
@@ -1876,7 +2200,7 @@ __webpack_require__.r(__webpack_exports__);
       var _this2 = this;
 
       axios.get('/api/product').then(function (response) {
-        _this2.categoris = response.data.data;
+        _this2.products = response.data.data;
       })["catch"](function (error) {
         console.log(error);
       });
@@ -1895,35 +2219,21 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js");
-/**
- * First we will load all of this project's JavaScript dependencies which
- * includes Vue and other libraries. It is a great starting point when
- * building robust, powerful web applications using Vue and Laravel.
- */
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js").default;
 
+ // import { routes } from "./routes";
+// Vue.use(VueRouter);
 
-/**
- * The following block of code may be used to automatically register your
- * Vue components. It will recursively scan this directory for the Vue
- * components and automatically register them with their "basename".
- *
- * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
- */
-// const files = require.context('./', true, /\.vue$/i)
-// files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
-
-vue__WEBPACK_IMPORTED_MODULE_0__.default.component("content-component", __webpack_require__(/*! ./components/content.vue */ "./resources/js/components/content.vue").default);
-/**
- * Next, we will create a fresh Vue application instance and attach it to
- * the page. Then, you may begin adding components to this application
- * or customize the JavaScript scaffolding to fit your unique needs.
- */
+vue__WEBPACK_IMPORTED_MODULE_0__.default.component("content-component", __webpack_require__(/*! ./components/content.vue */ "./resources/js/components/content.vue").default); // const router = new VueRouter({
+//     mode: "history",
+//     routes: routes
+// });
 
 var app = new vue__WEBPACK_IMPORTED_MODULE_0__.default({
-  el: "#app"
+  el: "#app" // router: router
+
 });
 
 /***/ }),
@@ -37443,15 +37753,838 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    _vm._l(_vm.categoris, function(category) {
-      return _c("a", [_vm._v("\n    " + _vm._s(category.name_en) + "\n    ")])
-    }),
-    0
-  )
+  return _c("div", [
+    _c("main", [
+      _vm._m(0),
+      _vm._v(" "),
+      _vm._m(1),
+      _vm._v(" "),
+      _c("section", { staticClass: "latest-product-area padding-bottom" }, [
+        _c("div", { staticClass: "container" }, [
+          _vm._m(2),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "tab-content", attrs: { id: "nav-tabContent" } },
+            [
+              _c(
+                "div",
+                {
+                  staticClass: "tab-pane fade show active",
+                  attrs: {
+                    id: "nav-home",
+                    role: "tabpanel",
+                    "aria-labelledby": "nav-home-tab"
+                  }
+                },
+                [
+                  _c(
+                    "div",
+                    { staticClass: "row" },
+                    _vm._l(_vm.products, function(products) {
+                      return _c(
+                        "div",
+                        { staticClass: "col-xl-4 col-lg-4 col-md-6" },
+                        [
+                          _c("div", { staticClass: "single-product mb-60" }, [
+                            _vm._m(3, true),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "product-caption" }, [
+                              _vm._m(4, true),
+                              _vm._v(" "),
+                              _c("h4", [
+                                _vm._v(
+                                  "\n                                    " +
+                                    _vm._s(products["name"]) +
+                                    "\n                                    "
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("div", { staticClass: "price" }, [
+                                _c("ul", [
+                                  _c("li", [_vm._v(_vm._s(products["price"]))]),
+                                  _vm._v(" "),
+                                  _c("li", { staticClass: "discount" }, [
+                                    _vm._v(_vm._s(products["price_discount"]))
+                                  ])
+                                ])
+                              ])
+                            ])
+                          ])
+                        ]
+                      )
+                    }),
+                    0
+                  ),
+                  _vm._v(" "),
+                  _vm._m(5)
+                ]
+              )
+            ]
+          )
+        ])
+      ]),
+      _vm._v(" "),
+      _vm._m(6),
+      _vm._v(" "),
+      _vm._m(7),
+      _vm._v(" "),
+      _vm._m(8),
+      _vm._v(" "),
+      _vm._m(9)
+    ])
+  ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "slider-area " }, [
+      _c("div", { staticClass: "slider-active" }, [
+        _c(
+          "div",
+          {
+            staticClass: "single-slider slider-height",
+            attrs: { "data-background": "assets/img/hero/h1_hero.jpg" }
+          },
+          [
+            _c("div", { staticClass: "container" }, [
+              _c(
+                "div",
+                {
+                  staticClass:
+                    "row d-flex align-items-center justify-content-between"
+                },
+                [
+                  _c(
+                    "div",
+                    {
+                      staticClass:
+                        "col-xl-6 col-lg-6 col-md-6 col-sm-6 d-none d-md-block"
+                    },
+                    [
+                      _c(
+                        "div",
+                        {
+                          staticClass: "hero__img",
+                          attrs: {
+                            "data-animation": "bounceIn",
+                            "data-delay": ".4s"
+                          }
+                        },
+                        [
+                          _c("img", {
+                            attrs: {
+                              src: "assets/img/hero/hero_man.png",
+                              alt: ""
+                            }
+                          })
+                        ]
+                      )
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    { staticClass: "col-xl-5 col-lg-5 col-md-5 col-sm-8" },
+                    [
+                      _c("div", { staticClass: "hero__caption" }, [
+                        _c(
+                          "span",
+                          {
+                            attrs: {
+                              "data-animation": "fadeInRight",
+                              "data-delay": ".4s"
+                            }
+                          },
+                          [_vm._v("60% Discount")]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "h1",
+                          {
+                            attrs: {
+                              "data-animation": "fadeInRight",
+                              "data-delay": ".6s"
+                            }
+                          },
+                          [_vm._v("Winter "), _c("br"), _vm._v(" Collection")]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "p",
+                          {
+                            attrs: {
+                              "data-animation": "fadeInRight",
+                              "data-delay": ".8s"
+                            }
+                          },
+                          [_vm._v("Best Cloth Collection By 2020!")]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "div",
+                          {
+                            staticClass: "hero__btn",
+                            attrs: {
+                              "data-animation": "fadeInRight",
+                              "data-delay": "1s"
+                            }
+                          },
+                          [
+                            _c(
+                              "a",
+                              {
+                                staticClass: "btn hero-btn",
+                                attrs: { href: "industries.html" }
+                              },
+                              [_vm._v("Shop Now")]
+                            )
+                          ]
+                        )
+                      ])
+                    ]
+                  )
+                ]
+              )
+            ])
+          ]
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          {
+            staticClass: "single-slider slider-height",
+            attrs: { "data-background": "assets/img/hero/h1_hero.jpg" }
+          },
+          [
+            _c("div", { staticClass: "container" }, [
+              _c(
+                "div",
+                {
+                  staticClass:
+                    "row d-flex align-items-center justify-content-between"
+                },
+                [
+                  _c(
+                    "div",
+                    {
+                      staticClass:
+                        "col-xl-6 col-lg-6 col-md-6 col-sm-6 d-none d-md-block"
+                    },
+                    [
+                      _c(
+                        "div",
+                        {
+                          staticClass: "hero__img",
+                          attrs: {
+                            "data-animation": "bounceIn",
+                            "data-delay": ".4s"
+                          }
+                        },
+                        [
+                          _c("img", {
+                            attrs: {
+                              src: "assets/img/hero/hero_man.png",
+                              alt: ""
+                            }
+                          })
+                        ]
+                      )
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    { staticClass: "col-xl-5 col-lg-5 col-md-5 col-sm-8" },
+                    [
+                      _c("div", { staticClass: "hero__caption" }, [
+                        _c(
+                          "span",
+                          {
+                            attrs: {
+                              "data-animation": "fadeInRight",
+                              "data-delay": ".4s"
+                            }
+                          },
+                          [_vm._v("60% Discount")]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "h1",
+                          {
+                            attrs: {
+                              "data-animation": "fadeInRight",
+                              "data-delay": ".6s"
+                            }
+                          },
+                          [_vm._v("Winter "), _c("br"), _vm._v(" Collection")]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "p",
+                          {
+                            attrs: {
+                              "data-animation": "fadeInRight",
+                              "data-delay": ".8s"
+                            }
+                          },
+                          [_vm._v("Best Cloth Collection By 2020!")]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "div",
+                          {
+                            staticClass: "hero__btn",
+                            attrs: {
+                              "data-animation": "fadeInRight",
+                              "data-delay": "1s"
+                            }
+                          },
+                          [
+                            _c(
+                              "a",
+                              {
+                                staticClass: "btn hero-btn",
+                                attrs: { href: "industries.html" }
+                              },
+                              [_vm._v("Shop Now")]
+                            )
+                          ]
+                        )
+                      ])
+                    ]
+                  )
+                ]
+              )
+            ])
+          ]
+        )
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("section", { staticClass: "category-area section-padding30" }, [
+      _c("div", { staticClass: "container-fluid" }, [
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-lg-12" }, [
+            _c("div", { staticClass: "section-tittle text-center mb-85" }, [
+              _c("h2", [_vm._v("Shop by Category")])
+            ])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-xl-4 col-lg-6" }, [
+            _c("div", { staticClass: "single-category mb-30" }, [
+              _c("div", { staticClass: "category-img" }, [
+                _c("img", {
+                  attrs: { src: "assets/img/categori/cat1.jpg", alt: "" }
+                }),
+                _vm._v(" "),
+                _c("div", { staticClass: "category-caption" }, [
+                  _c("h2", [_vm._v("Owmen`s")]),
+                  _vm._v(" "),
+                  _c("span", { staticClass: "best" }, [
+                    _c("a", { attrs: { href: "#" } }, [
+                      _vm._v("Best New Deals")
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("span", { staticClass: "collection" }, [
+                    _vm._v("New Collection")
+                  ])
+                ])
+              ])
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-xl-4 col-lg-6" }, [
+            _c("div", { staticClass: "single-category mb-30" }, [
+              _c("div", { staticClass: "category-img text-center" }, [
+                _c("img", {
+                  attrs: { src: "assets/img/categori/cat2.jpg", alt: "" }
+                }),
+                _vm._v(" "),
+                _c("div", { staticClass: "category-caption" }, [
+                  _c("span", { staticClass: "collection" }, [
+                    _vm._v("Discount!")
+                  ]),
+                  _vm._v(" "),
+                  _c("h2", [_vm._v("Winter Cloth")]),
+                  _vm._v(" "),
+                  _c("p", [_vm._v("New Collection")])
+                ])
+              ])
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-xl-4 col-lg-6" }, [
+            _c("div", { staticClass: "single-category mb-30" }, [
+              _c("div", { staticClass: "category-img" }, [
+                _c("img", {
+                  attrs: { src: "assets/img/categori/cat3.jpg", alt: "" }
+                }),
+                _vm._v(" "),
+                _c("div", { staticClass: "category-caption" }, [
+                  _c("h2", [_vm._v("Man`s Cloth")]),
+                  _vm._v(" "),
+                  _c("span", { staticClass: "best" }, [
+                    _c("a", { attrs: { href: "#" } }, [
+                      _vm._v("Best New Deals")
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("span", { staticClass: "collection" }, [
+                    _vm._v("New Collection")
+                  ])
+                ])
+              ])
+            ])
+          ])
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      {
+        staticClass:
+          "row product-btn d-flex justify-content-end align-items-end"
+      },
+      [
+        _c("div", { staticClass: "col-xl-4 col-lg-5 col-md-5" }, [
+          _c("div", { staticClass: "section-tittle mb-30" }, [
+            _c("h2", [_vm._v("Latest Products")])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-xl-8 col-lg-7 col-md-7" }, [
+          _c("div", { staticClass: "properties__button f-right" }, [
+            _c("nav", [
+              _c(
+                "div",
+                {
+                  staticClass: "nav nav-tabs",
+                  attrs: { id: "nav-tab", role: "tablist" }
+                },
+                [
+                  _c(
+                    "a",
+                    {
+                      staticClass: "nav-item nav-link active",
+                      attrs: {
+                        id: "nav-home-tab",
+                        "data-toggle": "tab",
+                        href: "#nav-home",
+                        role: "tab",
+                        "aria-controls": "nav-home",
+                        "aria-selected": "true"
+                      }
+                    },
+                    [_vm._v("All")]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "a",
+                    {
+                      staticClass: "nav-item nav-link",
+                      attrs: {
+                        id: "nav-profile-tab",
+                        "data-toggle": "tab",
+                        href: "#nav-profile",
+                        role: "tab",
+                        "aria-controls": "nav-profile",
+                        "aria-selected": "false"
+                      }
+                    },
+                    [_vm._v("New")]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "a",
+                    {
+                      staticClass: "nav-item nav-link",
+                      attrs: {
+                        id: "nav-contact-tab",
+                        "data-toggle": "tab",
+                        href: "#nav-contact",
+                        role: "tab",
+                        "aria-controls": "nav-contact",
+                        "aria-selected": "false"
+                      }
+                    },
+                    [_vm._v("Featured")]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "a",
+                    {
+                      staticClass: "nav-item nav-link",
+                      attrs: {
+                        id: "nav-last-tab",
+                        "data-toggle": "tab",
+                        href: "#nav-last",
+                        role: "tab",
+                        "aria-controls": "nav-contact",
+                        "aria-selected": "false"
+                      }
+                    },
+                    [_vm._v("Offer")]
+                  )
+                ]
+              )
+            ])
+          ])
+        ])
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "product-img" }, [
+      _c("img", { attrs: { alt: "" } })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "product-ratting" }, [
+      _c("i", { staticClass: "far fa-star" }),
+      _vm._v(" "),
+      _c("i", { staticClass: "far fa-star" }),
+      _vm._v(" "),
+      _c("i", { staticClass: "far fa-star" }),
+      _vm._v(" "),
+      _c("i", { staticClass: "far fa-star low-star" }),
+      _vm._v(" "),
+      _c("i", { staticClass: "far fa-star low-star" })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "load_more_btn text-center col-center" }, [
+      _c("a", { staticClass: "btn_3", attrs: { href: "/product-list" } }, [
+        _vm._v("Load More")
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "best-product-area lf-padding" }, [
+      _c(
+        "div",
+        {
+          staticClass: "product-wrapper bg-height",
+          staticStyle: {
+            "background-image": "url('assets/img/categori/card.png')"
+          }
+        },
+        [
+          _c("div", { staticClass: "container position-relative" }, [
+            _c(
+              "div",
+              { staticClass: "row justify-content-between align-items-end" },
+              [
+                _c(
+                  "div",
+                  {
+                    staticClass:
+                      "product-man position-absolute  d-none d-lg-block"
+                  },
+                  [
+                    _c("img", {
+                      attrs: {
+                        src: "assets/img/categori/card-man.png",
+                        alt: ""
+                      }
+                    })
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass: "col-xl-2 col-lg-2 col-md-2 d-none d-lg-block"
+                  },
+                  [
+                    _c("div", { staticClass: "vertical-text" }, [
+                      _c("span", [_vm._v("Manz")])
+                    ])
+                  ]
+                ),
+                _vm._v(" "),
+                _c("div", { staticClass: "col-xl-8 col-lg-8" }, [
+                  _c("div", { staticClass: "best-product-caption" }, [
+                    _c("h2", [
+                      _vm._v("Find The Best Product"),
+                      _c("br"),
+                      _vm._v(" from Our Shop")
+                    ]),
+                    _vm._v(" "),
+                    _c("p", [
+                      _vm._v(
+                        "Designers who are interesten creating state ofthe."
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c(
+                      "a",
+                      { staticClass: "black-btn", attrs: { href: "#" } },
+                      [_vm._v("Shop Now")]
+                    )
+                  ])
+                ])
+              ]
+            )
+          ])
+        ]
+      ),
+      _vm._v(" "),
+      _c("div", { staticClass: "shape bounce-animate d-none d-md-block" }, [
+        _c("img", {
+          attrs: { src: "assets/img/categori/card-shape.png", alt: "" }
+        })
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "best-collection-area section-padding2" }, [
+      _c("div", { staticClass: "container" }, [
+        _c(
+          "div",
+          { staticClass: "row d-flex justify-content-between align-items-end" },
+          [
+            _c("div", { staticClass: "col-xl-4 col-lg-4 col-md-6" }, [
+              _c("div", { staticClass: "best-left-cap" }, [
+                _c("h2", [_vm._v("Best Collection of This Month")]),
+                _vm._v(" "),
+                _c("p", [_vm._v("Designers who are interesten crea.")]),
+                _vm._v(" "),
+                _c(
+                  "a",
+                  { staticClass: "btn shop1-btn", attrs: { href: "#" } },
+                  [_vm._v("Shop Now")]
+                )
+              ]),
+              _vm._v(" "),
+              _c(
+                "div",
+                { staticClass: "best-left-img mb-30 d-none d-sm-block" },
+                [
+                  _c("img", {
+                    attrs: {
+                      src: "assets/img/collection/collection1.png",
+                      alt: ""
+                    }
+                  })
+                ]
+              )
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-xl-2 col-lg-2 d-none d-lg-block" }, [
+              _c("div", { staticClass: "best-mid-img mb-30 " }, [
+                _c("img", {
+                  attrs: {
+                    src: "assets/img/collection/collection2.png",
+                    alt: ""
+                  }
+                })
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-xl-4 col-lg-6 col-md-6" }, [
+              _c("div", { staticClass: "best-right-cap " }, [
+                _c("div", { staticClass: "best-single mb-30" }, [
+                  _c("div", { staticClass: "single-cap" }, [
+                    _c("h4", [
+                      _vm._v("Menz Winter"),
+                      _c("br"),
+                      _vm._v(" Jacket")
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "single-img" }, [
+                    _c("img", {
+                      attrs: {
+                        src: "assets/img/collection/collection3.png",
+                        alt: ""
+                      }
+                    })
+                  ])
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "best-right-cap" }, [
+                _c("div", { staticClass: "best-single mb-30" }, [
+                  _c("div", { staticClass: "single-cap active" }, [
+                    _c("h4", [
+                      _vm._v("Menz Winter"),
+                      _c("br"),
+                      _vm._v("Jacket")
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "single-img" }, [
+                    _c("img", {
+                      attrs: {
+                        src: "assets/img/collection/collection4.png",
+                        alt: ""
+                      }
+                    })
+                  ])
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "best-right-cap" }, [
+                _c("div", { staticClass: "best-single mb-30" }, [
+                  _c("div", { staticClass: "single-cap" }, [
+                    _c("h4", [
+                      _vm._v("Menz Winter"),
+                      _c("br"),
+                      _vm._v(" Jacket")
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "single-img" }, [
+                    _c("img", {
+                      attrs: {
+                        src: "assets/img/collection/collection5.png",
+                        alt: ""
+                      }
+                    })
+                  ])
+                ])
+              ])
+            ])
+          ]
+        )
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "latest-wrapper lf-padding" }, [
+      _c(
+        "div",
+        {
+          staticClass: "latest-area latest-height d-flex align-items-center",
+          attrs: { "data-background": "assets/img/collection/latest-offer.png" }
+        },
+        [
+          _c("div", { staticClass: "container" }, [
+            _c("div", { staticClass: "row d-flex align-items-center" }, [
+              _c(
+                "div",
+                {
+                  staticClass:
+                    "col-xl-5 col-lg-5 col-md-6 offset-xl-1 offset-lg-1"
+                },
+                [
+                  _c("div", { staticClass: "latest-caption" }, [
+                    _c("h2", [
+                      _vm._v("Get Our"),
+                      _c("br"),
+                      _vm._v("Latest Offers News")
+                    ]),
+                    _vm._v(" "),
+                    _c("p", [_vm._v("Subscribe news latter")])
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c("div", { staticClass: "col-xl-5 col-lg-5 col-md-6 " }, [
+                _c("div", { staticClass: "latest-subscribe" }, [
+                  _c("form", {
+                    attrs: { "wire:submit.prevent": "save_email_news" }
+                  })
+                ])
+              ])
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "man-shape" }, [
+            _c("img", {
+              attrs: { src: "assets/img/collection/latest-man.png", alt: "" }
+            })
+          ])
+        ]
+      )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "shop-method-area section-padding30" }, [
+      _c("div", { staticClass: "container" }, [
+        _c("div", { staticClass: "row d-flex justify-content-between" }, [
+          _c("div", { staticClass: "col-xl-3 col-lg-3 col-md-6" }, [
+            _c("div", { staticClass: "single-method mb-40" }, [
+              _c("i", { staticClass: "ti-package" }),
+              _vm._v(" "),
+              _c("h6", [_vm._v("Free Shipping Method")]),
+              _vm._v(" "),
+              _c("p", [
+                _vm._v(
+                  "aorem ixpsacdolor sit ameasecur adipisicing elitsf edasd."
+                )
+              ])
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-xl-3 col-lg-3 col-md-6" }, [
+            _c("div", { staticClass: "single-method mb-40" }, [
+              _c("i", { staticClass: "ti-unlock" }),
+              _vm._v(" "),
+              _c("h6", [_vm._v("Secure Payment System")]),
+              _vm._v(" "),
+              _c("p", [
+                _vm._v(
+                  "aorem ixpsacdolor sit ameasecur adipisicing elitsf edasd."
+                )
+              ])
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-xl-3 col-lg-3 col-md-6" }, [
+            _c("div", { staticClass: "single-method mb-40" }, [
+              _c("i", { staticClass: "ti-reload" }),
+              _vm._v(" "),
+              _c("h6", [_vm._v("Secure Payment System")]),
+              _vm._v(" "),
+              _c("p", [
+                _vm._v(
+                  "aorem ixpsacdolor sit ameasecur adipisicing elitsf edasd."
+                )
+              ])
+            ])
+          ])
+        ])
+      ])
+    ])
+  }
+]
 render._withStripped = true
 
 
